@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A fictionalized investigative feature about Lin Mei, the women she helped, and the Mending House." />
+  <title>The Mother They Called a Witch Built a Way Out</title>
+  <style>:root {
+  --paper: #ffffff;
+  --ink: #171717;
+  --muted: #69645f;
+  --time-red: #b00020;
+  --deep-red: #7b1221;
+  --thread-red: #a80f28;
+  --blush: #fae9e7;
+  --soft-gray: #f1f1ef;
+  --line: #d8d3cd;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--blush); color: var(--deep-red); }
+
+.site-header {
+  min-height: 78px;
+  border-top: 5px solid var(--time-red);
+  border-bottom: 1px solid #c9c5c0;
+  display: flex;
+  align-items: center;
+  padding: 0 34px;
+}
+
+.masthead {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.time-mark {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 45px;
+  background: var(--time-red);
+  color: white;
+  font-family: 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.masthead-divider { width: 1px; height: 29px; background: #b7b2ac; }
+
+.world-mark,
+.kicker,
+.story-meta,
+.fiction-note strong,
+.callout-label,
+.section-number,
+figcaption span {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+.world-mark { font-size: 13px; }
+
+.article-shell {
+  width: min(100% - 40px, 940px);
+  margin: 0 auto;
+  padding: 46px 0 112px;
+}
+
+.thread-rule { position: relative; height: 18px; margin-bottom: 48px; }
+.thread-rule::before,
+.thread-rule::after { content: ''; position: absolute; top: 8px; height: 1px; }
+.thread-rule::before { left: 0; width: 94px; background: var(--thread-red); }
+.thread-rule::after { left: 103px; right: 0; background: var(--line); }
+.thread-rule span {
+  position: absolute;
+  left: 91px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--thread-red);
+  border-radius: 50%;
+  background: white;
+}
+
+.story-header { width: min(100%, 790px); margin: 0 auto; }
+.kicker { margin: 0 0 21px; color: var(--deep-red); font-size: 12px; }
+
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 7.7vw, 6.55rem);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: -0.055em;
+}
+
+.deck {
+  max-width: 710px;
+  margin: 33px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.72rem);
+  line-height: 1.42;
+}
+
+.story-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.story-meta p { margin: 0; }
+.story-meta strong { color: var(--ink); }
+.story-meta span { width: 18px; height: 1px; background: var(--thread-red); }
+
+.fiction-note {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 24px;
+  margin-top: 28px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.fiction-note strong { color: var(--deep-red); font-size: 9px; }
+.fiction-note p { margin: 0; }
+
+.hero-figure { margin: 58px 0 0; }
+
+.hero-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #151515;
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.76) contrast(0.94) blur(0.45px);
+  transform: scale(1.01);
+}
+
+.hero-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 7%), rgb(37 0 5 / 15%));
+  pointer-events: none;
+}
+
+figcaption {
+  max-width: 720px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+figcaption span { margin-right: 9px; color: var(--deep-red); font-size: 8px; }
+
+.body-column { width: min(100%, 720px); margin: 0 auto; }
+
+.callout {
+  margin: 78px 0 0;
+  padding: 30px 34px 31px;
+  border-top: 3px solid var(--deep-red);
+}
+
+.context-box { background: var(--blush); }
+.history-box,
+.update-box { background: var(--soft-gray); }
+.callout-label { margin: 0 0 16px; color: var(--deep-red); font-size: 9px; }
+
+.callout > p:last-child {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.66;
+}
+
+.story-section { margin-top: 104px; }
+
+.section-heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 32px;
+  padding-top: 21px;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 90px;
+  height: 3px;
+  background: var(--thread-red);
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 88px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--thread-red);
+  border-radius: 50%;
+  background: white;
+}
+
+.section-number { padding-top: 9px; color: var(--deep-red); font-size: 9px; }
+
+h2 {
+  margin: 0;
+  color: var(--deep-red);
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.section-heading p {
+  margin: 11px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.story-section > p {
+  margin: 0 0 1.35em;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.story-section > p:first-of-type::first-letter {
+  float: left;
+  margin: 0.08em 0.08em 0 0;
+  color: var(--deep-red);
+  font-family: var(--font-display);
+  font-size: 4.4em;
+  line-height: 0.72;
+}
+
+.history-box { margin-top: 76px; }
+
+.route-map {
+  width: min(940px, calc(100vw - 40px));
+  margin: 92px 0 0 50%;
+  padding: 34px 42px 25px;
+  transform: translateX(-50%);
+  border: 1px solid var(--line);
+  background: #fbfaf8;
+}
+
+.route-map-header { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+.route-map-header .callout-label { margin: 0; }
+
+.route-map h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 400;
+}
+
+.route-map svg { display: block; width: 100%; height: auto; margin-top: 18px; overflow: visible; }
+.map-guide { fill: none; stroke: #d9b9bd; stroke-width: 2; }
+.map-thread {
+  fill: none;
+  stroke: var(--thread-red);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 2 12;
+}
+
+.map-node circle:first-child { fill: #fbfaf8; stroke: var(--thread-red); stroke-width: 3; }
+.map-node circle:nth-child(2) { fill: var(--thread-red); }
+.map-node text {
+  fill: var(--ink);
+  font: 700 12px Arial, sans-serif;
+  letter-spacing: 0.07em;
+  text-anchor: middle;
+  text-transform: uppercase;
+}
+
+.route-list { display: none; }
+.route-map figcaption { margin-top: 4px; }
+
+.update-box { margin-top: 92px; }
+
+.works-cited {
+  margin-top: 102px;
+  padding-top: 25px;
+  border-top: 4px solid var(--deep-red);
+}
+
+.works-cited h2 { font-size: clamp(2.4rem, 6vw, 4rem); }
+.works-cited ol { margin: 36px 0 0; padding: 0; list-style: none; counter-reset: source; }
+.works-cited li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  color: #403d39;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.works-cited li::before {
+  counter-increment: source;
+  content: counter(source, decimal-leading-zero);
+  color: var(--deep-red);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 640px) {
+  .site-header { min-height: 66px; padding: 0 20px; }
+  .time-mark { width: 58px; height: 39px; font-size: 21px; }
+  .article-shell { width: min(100% - 36px, 940px); padding-top: 30px; }
+  .thread-rule { margin-bottom: 34px; }
+  h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
+  .deck { margin-top: 26px; }
+  .fiction-note { grid-template-columns: 1fr; gap: 7px; }
+  .hero-figure { margin-top: 42px; }
+  .hero-image-wrap { aspect-ratio: 16 / 9; }
+  .callout { padding: 25px 24px 27px; }
+  .story-section { margin-top: 84px; }
+  .section-heading { grid-template-columns: 1fr; gap: 5px; }
+  .section-number { padding: 0; }
+  .story-section > p { font-size: 17px; line-height: 1.7; }
+  .route-map { width: calc(100vw - 36px); padding: 28px 24px 24px; }
+  .route-map-header { display: block; }
+  .route-map h3 { margin-top: 10px; line-height: 1.2; }
+  .route-map svg { display: none; }
+  .route-list { display: block; margin: 28px 0 22px; padding: 0; list-style: none; }
+  .route-list li {
+    position: relative;
+    margin-left: 7px;
+    padding: 0 0 24px 28px;
+    border-left: 2px dashed var(--thread-red);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .route-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -7px;
+    width: 12px;
+    height: 12px;
+    border: 3px solid var(--thread-red);
+    border-radius: 50%;
+    background: #fbfaf8;
+  }
+  .route-list li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .works-cited li { grid-template-columns: 26px 1fr; gap: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}</style>
+</head>
+<body><main><header class="site-header"><a class="masthead" href="#top" aria-label="TIME World — return to top"><span class="time-mark">TIME</span><span class="masthead-divider" aria-hidden="true"></span><span class="world-mark">WORLD</span></a></header><article id="top" class="article-shell"><div class="thread-rule" aria-hidden="true"><span></span></div><header class="story-header"><p class="kicker">Investigation</p><h1>The Mother They Called a Witch Built a Way Out</h1><p class="deck">Eight years after Lin Mei fled a mountain village without her children, a viral accusation exposed her shelter and brought a resident’s husband, his relatives and police to its gate.</p><div class="story-meta"><p><strong>By Antong He</strong></p><span aria-hidden="true"></span><p>August 17, 2026</p></div><aside class="fiction-note" aria-label="Fiction disclaimer"><strong>Fiction disclaimer</strong><p>A fictionalized investigative feature modeled on TIME World reporting. Characters, quotations and institutions are invented or composite for this academic project.</p></aside></header><figure class="hero-figure"><div class="hero-image-wrap"><img src="data:image/jpeg;base64,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" alt="Police lights flashing outside an apartment building at night"/></div><figcaption><span>Video still</span>Stock footage from Shutterstock. Used as a visual representation of the fictional confrontation.</figcaption></figure><div class="body-column"><aside class="callout context-box" aria-labelledby="context-title"><p class="callout-label" id="context-title">Context</p><p>A 2021 Frontiers in Psychiatry study of 339 rural Sichuan women found that 86 respondents explained abuse through a woman’s supposed laziness, anxiety, isolation or lack of education—patterns researchers identified as victim-blaming. An old report used nearly the same language for Lin Mei.</p></aside><section class="story-section" id="hunt"><header class="section-heading"><span class="section-number">01</span><div><h2>The Hunt Reaches the Door</h2><p>The livestream, the attack and the arrival of police</p></div></header><p>The livestream called it a rescue. The women inside the Mending House called it a siege. Hours after a viral &quot;Bread Witch&quot; video exposed the shelter’s street, a resident’s husband arrived with relatives. Some hammered the gate while others filmed accusations that Lin had kidnapped his wife and child. Police arrived as Lin sent volunteers and residents through the back courtyard. She stayed with voluntary-intake forms, police reports and a protection order. She would give records to officers, she said, but not names or faces to the livestream.</p><p>Through the gate, Lin told the men that every resident had entered by choice and could leave. She said the home she escaped had been the cage, not this shelter. At 11:03 p.m., officers asked her to open the gate.</p><p>Thirty-six hours later, an email reached TIME. &quot;The witch in that clipping was my mother,&quot; Lin’s daughter wrote. &quot;The children were my brother and me. She did not kidnap us.&quot; She said the attack had convinced her that silence now placed other women at risk.</p></section><section class="story-section" id="report"><header class="section-heading"><span class="section-number">02</span><div><h2>What the Old Report Left Out</h2><p>The old headline and the caricature of Lin</p></div></header><p>&quot;Witch Lures Girl and Boy Into Forest,&quot; the archived headline read. It called two sweet buns &quot;bait&quot; and stitches inside a coat &quot;occult signs,&quot; but hid that the children were Lin’s own. A caricature recast Lin, then 23, as a hunched old crone. County records confirmed the relationship; her daughter still had the coat. The former editor said the paper relied on village officials and had lost its notes. One male villager still called hitting &quot;a private family matter.&quot;</p></section><aside class="callout history-box" aria-labelledby="history-title"><p class="callout-label" id="history-title">History</p><p>From the mid-1400s through the late 1600s, European witch hunts killed tens of thousands. Jessie Kindig reports that 80 percent of those accused in Europe and colonial America were women. Courts and investigators turned neighbors’ accusations and coerced confessions into evidence. Lin did not face a historical trial. But the old report used a related logic: once she refused the family role assigned to her, accusation substituted for evidence, and escape itself became proof of danger.</p></aside><section class="story-section" id="house"><header class="section-heading"><span class="section-number">03</span><div><h2>Inside the Consuming House</h2><p>Lin’s marriage, the Jinci water legend and her escape</p></div></header><p>Lin married at 17. Her husband had promised town life, then took her to his village, stopped her from working and controlled the money. Lin cooked, cleaned and cared for his parents. After a daughter, the family demanded more pregnancies until she produced a son. Her mother-in-law, who had lived under the same rule, told her, &quot;Women have always lived this way.&quot; In the old tale, a witch consumes children. Lin described a house that consumed her labor, health, education and control over her body.</p><p>Lin tells those years through the Jinci water legend. Before sunrise, she carried water from the village well. A red-handled whip filled the jar when lifted, she said. Her mother-in-law seized it, called its power family property and pulled it free. When the water rose, the village blamed Lin.</p><p>At 23, Lin packed two buns and stitched a route inside her daughter’s coat. Villagers stopped the family. Her husband and his relatives pulled her daughter, 5, and son, 2, away; Lin escaped alone. Mediation notes record her husband insisting the boy &quot;carried the family name.&quot; Lin rejected a proposed split. With both children already in his home and Lin in temporary housing, they remained with him. Two monthly visits were ordered; none occurred. Winter packages did. Her daughter recognized Lin’s stitching inside the cuffs.</p></section><figure class="route-map" aria-labelledby="route-title route-caption"><div class="route-map-header"><p class="callout-label">Red-thread route map</p><h3 id="route-title">Stations — clinics — temporary rooms</h3></div><svg viewBox="0 0 780 190" role="img" aria-labelledby="route-title route-caption"><path class="map-guide" d="M55 112 C146 35 227 38 302 103 S465 165 535 88 S656 38 730 82"></path><path class="map-thread" d="M55 112 C146 35 227 38 302 103 S465 165 535 88 S656 38 730 82"></path><g class="map-node" transform="translate(55 112)"><circle r="8"></circle><circle r="3"></circle><text x="0" y="31">Stations</text></g><g class="map-node" transform="translate(302 103)"><circle r="8"></circle><circle r="3"></circle><text x="0" y="31">Clinics</text></g><g class="map-node" transform="translate(535 88)"><circle r="8"></circle><circle r="3"></circle><text x="0" y="31">Temporary rooms</text></g><g class="map-node" transform="translate(730 82)"><circle r="8"></circle><circle r="3"></circle></g></svg><figcaption id="route-caption"><span>Route map</span>No real shelter addresses are shown.</figcaption></figure><section class="story-section" id="mending-house"><header class="section-heading"><span class="section-number">04</span><div><h2>The House That Mends</h2><p>How Lin established the shelter</p></div></header><p>Mending House began with one spare mattress, one bus ticket and a woman with nowhere else to sleep. Lin supported herself by sewing. Former guests returned with rides, childcare and legal contacts. On one wall, a map stitched in red thread linked stations, clinics and temporary rooms without naming shelter addresses.</p><p>Lin chose the name Mending House because she spent her days repairing clothes and because the shelter filled practical gaps: a ride, a bed, a lawyer’s number. It remained informal and unregistered. Lin said she had built the place she needed when she left—one where a mother could escape without losing every path back to her children.</p></section><section class="story-section" id="gate"><header class="section-heading"><span class="section-number">05</span><div><h2>When the Gate Opened</h2><p>The police investigation and legal result</p></div></header><p>Police interviewed the residents privately and found no evidence of abduction or unlawful detention. The husband was removed while officers reviewed threats, property damage and a possible protection-order violation. Civil-affairs officials separately ordered Mending House to pause public operations while it sought registration. A legal-aid lawyer said that registration was an administrative issue and did not prove a criminal claim.</p></section><section class="story-section" id="mirror"><header class="section-heading"><span class="section-number">06</span><div><h2>The Black Mirror</h2><p>The uncertain future of Lin and her children</p></div></header><p>The reporter sent Lin’s number to her daughter, now 13. Her son, 10, was not ready to speak. &quot;I chose to stay alive,&quot; Lin said. &quot;My children paid part of that price.&quot; Neither child promised to call. For the first time in eight years, however, the choice belonged to them.</p><p>When the screen turns black, Lin disappears, but the viewer remains reflected in the glass. The question is no longer whether she was a witch. It is how a family’s claim over a woman’s body became a story so many people were willing to repeat.</p></section><aside class="callout update-box" aria-labelledby="update-title"><p class="callout-label" id="update-title">Update</p><p>The old paper added a correction, and platforms removed posts that exposed the shelter’s location. Mending House remains closed while its registration application is reviewed.</p></aside><section class="works-cited" aria-labelledby="works-title"><h2 id="works-title">Works Cited</h2><ol><li>Grimm, Jacob, and Wilhelm Grimm. &quot;Hansel and Gretel.&quot; Translated by Maria Tatar, The Classic Fairy Tales: Texts, Criticism, edited by Maria Tatar, W. W. Norton, 1999.</li><li>Hou, Fengsu, et al. &quot;‘Whose Fault Is It?’ How Rural Chinese Women Explain Intimate Partner Violence: A Qualitative Study.&quot; Frontiers in Psychiatry, vol. 12, 2021, article 711819. https://doi.org/10.3389/fpsyt.2021.711819.</li><li>Kindig, Jessie. &quot;All the Witches They Could Not Burn.&quot; Boston Review, 4 Dec. 2018, https://www.bostonreview.net/articles/jessie-kindig-all-witches-they-could-not-burn/.</li><li>Michelson, Ethan. Decoupling: Gender Injustice in China’s Divorce Courts. Cambridge University Press, 2022. https://doi.org/10.1017/9781108768177.</li><li>National People’s Congress of the People’s Republic of China. Anti-Domestic Violence Law of the People’s Republic of China. 27 Dec. 2015, effective 1 Mar. 2016. https://www.npc.gov.cn/npc/c2/c10134/201905/t20190521_260193.html.</li><li>Wan, Jianzhong. &quot;A Cultural Interpretation of ‘Magical-Object’ Discourse in Chinese Folktales.&quot; Northwest Ethno-National Studies, no. 3, 2004, pp. 120–31. https://www.chinafolklore.org/upload/news/Attach-20090322104220.pdf.</li><li>“Police Lights Flashing Outside an Apartment Building at Night.” Shutterstock, https://www.shutterstock.com/zh/video/clip-9452162-police-lights-flashing-outside-apartment-building-night.</li></ol></section></div></article></main></body>
+</html>
